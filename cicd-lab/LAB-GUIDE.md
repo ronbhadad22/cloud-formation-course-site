@@ -45,6 +45,12 @@ cd cloud-formation-course-site
 git checkout cicd-lab
 ```
 
+6. **Set default branch and enable GitHub Actions:**
+   - Go to your forked repo → **Settings** → **General** → **Default branch**
+   - Change default branch from `main` to `cicd-lab` and confirm
+   - Go to the **Actions** tab
+   - Click **"I understand my workflows, go ahead and enable them"**
+
 ---
 
 ## Step 2 — Deploy the Infrastructure
@@ -182,6 +188,8 @@ aws cloudformation delete-stack --stack-name cicd-lab
 
 | Problem | Solution |
 |---------|----------|
+| **Actions tab not showing workflows** | Go to your fork → **Actions** tab → Click "I understand my workflows, go ahead and enable them" |
+| **Pipeline not triggering on push** | GitHub Actions are disabled by default on forks - see Step 1 to enable them |
 | Pipeline fails at ECR login | Check `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` secrets |
 | SSM deploy fails | Make sure EC2 instance is running and has SSM agent |
 | App not loading in browser | Wait 2-3 min after stack creation for Docker to install |
