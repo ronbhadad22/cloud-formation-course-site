@@ -5,7 +5,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const VERSION = process.env.APP_VERSION || '1.0.0';
 
-
 // Home page
 app.get('/', (req, res) => {
   res.send(`
